@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-<title>CueTimer v3.0.2</title>
+<title>CueTimer v3.0.4</title>
 <link rel="icon" type="image/png" sizes="192x192" href="seimei_program_timer_icon_play_192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="seimei_program_timer_icon_play_180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -11,8 +11,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#050b14">
-<meta name="app-version" content="3.0.2">
-<meta name="app-build" content="2026.07.25.02">
+<meta name="app-version" content="3.0.3">
+<meta name="app-build" content="2026.07.25.05">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="CueTimer">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -75,9 +75,9 @@ button.resetStepBtn{background:#334155}button.stepCtl{min-width:42px}.stepCountC
 .editScroll{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:0 16px 12px;scrollbar-gutter:stable}
 .editFooter{flex:0 0 auto;padding:10px 16px 16px;background:#0d1726;border-top:1px solid var(--line);position:relative;z-index:2}
 .editFooter .bottomBtns:first-child{margin-top:0}
-.modalHead{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px}.modalHead h2{font-size:24px;margin:0}.settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px}.setting{background:#07111f;border:1px solid var(--line);border-radius:12px;padding:10px}.setting label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}.setting input,.setting select{width:100%;background:#020617;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px;font-weight:800;font-size:16px}.steps{display:grid;gap:8px}.step{display:grid;grid-template-columns:42px minmax(110px,1fr) repeat(9,minmax(50px,.72fr));gap:6px;align-items:center;background:#07111f;border:1px solid var(--line);border-radius:14px;padding:8px}.step.zero{border-color:var(--red);box-shadow:0 0 0 2px rgba(239,68,68,.18)}.stepNum{font-weight:900;color:var(--yellow);text-align:center;font-size:18px}.stepTime{font-family:"SF Mono","Roboto Mono","Consolas",monospace;font-size:26px;font-weight:900;text-align:center;color:var(--digit);letter-spacing:-.04em}.step button{font-size:14px;min-height:38px;border-radius:10px;padding:4px}.hint{color:var(--muted);font-size:13px;line-height:1.6;margin:10px 0 0}.bottomBtns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.modalHead{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px}.modalHead h2{font-size:24px;margin:0}.settings{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;margin-bottom:12px}.setting{min-width:0;background:#07111f;border:1px solid var(--line);border-radius:10px;padding:7px 6px}.setting label{display:block;color:var(--muted);font-size:clamp(10px,1.15vw,13px);line-height:1.2;min-height:2.4em;margin-bottom:5px;text-align:center}.setting input,.setting select{width:100%;min-width:0;background:#020617;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:6px 3px;font-weight:800;font-size:clamp(11px,1.25vw,15px)}.steps{display:grid;gap:8px}.step{display:grid;grid-template-columns:42px minmax(110px,1fr) repeat(9,minmax(50px,.72fr));gap:6px;align-items:center;background:#07111f;border:1px solid var(--line);border-radius:14px;padding:8px}.step.zero{border-color:var(--red);box-shadow:0 0 0 2px rgba(239,68,68,.18)}.stepNum{font-weight:900;color:var(--yellow);text-align:center;font-size:18px}.stepTime{font-family:"SF Mono","Roboto Mono","Consolas",monospace;font-size:26px;font-weight:900;text-align:center;color:var(--digit);letter-spacing:-.04em}.step button{font-size:14px;min-height:38px;border-radius:10px;padding:4px}.hint{color:var(--muted);font-size:13px;line-height:1.6;margin:10px 0 0}.bottomBtns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
 .appInfoGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}.appInfoCard{background:#07111f;border:1px solid var(--line);border-radius:12px;padding:10px}.appInfoCard label{display:block;color:var(--muted);font-size:13px;margin-bottom:5px}.appInfoValue{font-size:16px;font-weight:900;word-break:break-word}.appInfoState{margin:10px 0;padding:10px;border:1px solid var(--line);border-radius:12px;background:#07111f;font-weight:900}.appInfoState.ok{border-color:rgba(34,197,94,.55);color:#bbf7d0}.appInfoState.update{border-color:rgba(250,204,21,.55);color:#fde68a}.appInfoState.error{border-color:rgba(239,68,68,.55);color:#fecaca}.updateLog{margin:10px 0;padding:10px 10px 10px 28px;background:#07111f;border:1px solid var(--line);border-radius:12px;color:#dbeafe;line-height:1.65}.soundSettings{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:10px 0}.soundOption{background:#07111f;border:1px solid var(--line);border-radius:12px;padding:10px}.soundOption label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}.soundOption select,.soundOption input{width:100%;background:#020617;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px;font-weight:800;font-size:16px}.toggleRow{display:flex;align-items:center;justify-content:space-between;gap:8px}.toggleRow input{width:auto;transform:scale(1.25)}.audioDiag{margin:10px 0;padding:10px;border:1px solid var(--line);border-radius:12px;background:#07111f;font-family:"SF Mono","Roboto Mono",monospace;font-size:13px;line-height:1.55;white-space:pre-wrap}.audioDiag.ok{border-color:rgba(34,197,94,.55);color:#bbf7d0}.audioDiag.warn{border-color:rgba(250,204,21,.55);color:#fde68a}.audioDiag.error{border-color:rgba(239,68,68,.55);color:#fecaca}
-@media(max-width:820px){.appInfoGrid{grid-template-columns:1fr 1fr}.app{grid-template-rows:1fr 14dvh}.controls{grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr}.settings{grid-template-columns:1fr 1fr}.savedTimers{grid-template-columns:1fr 1fr}.savedTimers .nameBox,.savedTimers .selectBox,.savedTimers .saveLoadStack,.savedTimers .fileActionStack,.savedTimers .wakeBox{grid-column:span 1}.savedTimers .savedSpacer{display:none}.step{grid-template-columns:34px 1fr repeat(3,1fr)}.step button{font-size:12px}.digit7{width:clamp(64px,15vw,170px);height:clamp(116px,29vw,310px)}.colon7{height:clamp(116px,29vw,310px)}.meta{grid-template-columns:1fr;font-size:14px;gap:2px}.topbar{min-height:38px}}
+@media(max-width:820px){.appInfoGrid{grid-template-columns:1fr 1fr}.app{grid-template-rows:1fr 14dvh}.controls{grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr}.settings{grid-template-columns:repeat(8,minmax(0,1fr));gap:4px}.setting{padding:6px 4px}.setting label{font-size:10px}.setting input,.setting select{font-size:11px;padding:5px 2px}.savedTimers{grid-template-columns:1fr 1fr}.savedTimers .nameBox,.savedTimers .selectBox,.savedTimers .saveLoadStack,.savedTimers .fileActionStack,.savedTimers .wakeBox{grid-column:span 1}.savedTimers .savedSpacer{display:none}.step{grid-template-columns:34px 1fr repeat(3,1fr)}.step button{font-size:12px}.digit7{width:clamp(64px,15vw,170px);height:clamp(116px,29vw,310px)}.colon7{height:clamp(116px,29vw,310px)}.meta{grid-template-columns:1fr;font-size:14px;gap:2px}.topbar{min-height:38px}}
 </style>
 </head>
 <body>
@@ -153,8 +153,8 @@ button.resetStepBtn{background:#334155}button.stepCtl{min-width:42px}.stepCountC
   <div class="modalBox" style="width:min(760px,96vw)">
     <div class="modalHead"><h2>アプリ管理 <span class="versionBadge">Update Manager</span></h2><button class="small gray" onclick="closeAppManagement()">閉じる</button></div>
     <div class="appInfoGrid">
-      <div class="appInfoCard"><label>アプリバージョン</label><div class="appInfoValue" id="appVersionInfo">v3.0.2</div></div>
-      <div class="appInfoCard"><label>HTML Build</label><div class="appInfoValue" id="appBuildInfo">2026.07.25.02</div></div>
+      <div class="appInfoCard"><label>アプリバージョン</label><div class="appInfoValue" id="appVersionInfo">v3.0.4</div></div>
+      <div class="appInfoCard"><label>HTML Build</label><div class="appInfoValue" id="appBuildInfo">2026.07.25.05</div></div>
       <div class="appInfoCard"><label>Service Worker</label><div class="appInfoValue" id="swVersionInfo">確認中</div></div>
       <div class="appInfoCard"><label>Cache</label><div class="appInfoValue" id="cacheNameInfo">確認中</div></div>
     </div>
@@ -162,6 +162,8 @@ button.resetStepBtn{background:#334155}button.stepCtl{min-width:42px}.stepCountC
     <div class="bottomBtns"><button class="blue" onclick="checkForLatestVersion(true)">最新版を確認</button><button class="warn" onclick="completeAppUpdate()">最新版へ完全更新</button><button class="gray" onclick="closeAppManagement()">閉じる</button></div>
     <h3 style="margin:16px 0 6px">更新履歴</h3>
     <ul class="updateLog">
+      <li><strong>v3.0.4</strong>：EDITの8設定を各1/8幅で1行表示し、第1色・第2色を横並びに統一</li>
+      <li><strong>v3.0.3</strong>：更新通知の繰り返しを修正し、EDIT設定を4列固定で整列</li>
       <li><strong>v3.0.2</strong>：iPadOS 15向け互換音声エンジンと自動切替を追加</li>
       <li><strong>v3.0.1</strong>：iPad向け音声診断、同一タップ音声解放、音声エンジン再起動を追加</li>
       <li><strong>v3.0.0</strong>：アプリ情報、最新版確認、完全更新、起動時更新通知を追加</li>
@@ -194,10 +196,10 @@ button.resetStepBtn{background:#334155}button.stepCtl{min-width:42px}.stepCountC
 </div>
 
 <script>
-const APP_VERSION='3.0.2';
-const APP_BUILD='2026.07.25.03';
+const APP_VERSION='3.0.4';
+const APP_BUILD='2026.07.25.05';
 const EXPECTED_SW_VERSION='3.0.2';
-const EXPECTED_CACHE_NAME='cue-timer-v3-0-2';
+const EXPECTED_CACHE_NAME='cue-timer-v3-0-4';
 let steps=[180,60,180,60,300];
 let repeat=1;
 let currentStep=0,currentLoop=1,remain=steps[0];
@@ -731,13 +733,21 @@ async function checkForLatestVersion(manual=false){
   try{
     if(currentRegistration) await currentRegistration.update().catch(()=>{});
     const latest=await fetchLatestAppInfo();
-    const newer=latest.version!==APP_VERSION||latest.build!==APP_BUILD||!!waitingWorker;
-    if(newer){
+    const remoteIsDifferent=latest.version!==APP_VERSION||latest.build!==APP_BUILD;
+    if(remoteIsDifferent){
       showUpdateReady();
       setUpdateState('最新版があります：v'+latest.version+' / Build '+latest.build,'update');
-      if(!manual&&!updatePromptShown){updatePromptShown=true;setTimeout(()=>{if(confirm('CueTimerの最新版があります。今すぐ完全更新しますか？'))completeAppUpdate();},250);}
+      const promptKey='cueTimerUpdatePrompt:'+latest.version+':'+latest.build;
+      const alreadyPrompted=sessionStorage.getItem(promptKey)==='1';
+      if(!manual&&!updatePromptShown&&!alreadyPrompted){
+        updatePromptShown=true;
+        sessionStorage.setItem(promptKey,'1');
+        setTimeout(()=>{if(confirm('CueTimerの最新版があります。今すぐ完全更新しますか？'))completeAppUpdate();},250);
+      }
       return false;
     }
+    waitingWorker=null;
+    const badge=document.getElementById('updateStatus');if(badge)badge.classList.remove('show');
     setUpdateState('最新版です（v'+APP_VERSION+' / Build '+APP_BUILD+'）。','ok');
     return true;
   }catch(e){
@@ -750,6 +760,7 @@ async function completeAppUpdate(){
   if(!navigator.onLine){alert('完全更新にはインターネット接続が必要です。');return;}
   if(!confirm('保存済みタイマーを残したまま、アプリキャッシュを削除して最新版を再取得します。実行しますか？'))return;
   setUpdateState('完全更新を実行中…');
+  sessionStorage.setItem('cueTimerJustUpdated','1');
   try{
     if('serviceWorker' in navigator){const regs=await navigator.serviceWorker.getRegistrations();await Promise.all(regs.map(reg=>reg.unregister()));}
     if('caches' in window){const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('cue-timer-')||k.startsWith('seimei-program-timer-')).map(k=>caches.delete(k)));}
@@ -764,7 +775,10 @@ function registerServiceWorker(){
         currentRegistration=reg;reg.update().catch(()=>{});
         if(reg.waiting){waitingWorker=reg.waiting;showUpdateReady();}
         reg.addEventListener('updatefound',()=>{const nw=reg.installing;if(!nw)return;nw.addEventListener('statechange',()=>{if(nw.state==='installed'&&navigator.serviceWorker.controller){waitingWorker=nw;showUpdateReady();}});});
-        setTimeout(()=>checkForLatestVersion(false),1200);
+        setTimeout(()=>{
+          if(sessionStorage.getItem('cueTimerJustUpdated')==='1'){sessionStorage.removeItem('cueTimerJustUpdated');refreshAppManagementInfo();}
+          checkForLatestVersion(false);
+        },1200);
       }).catch(()=>{});
     });
     let refreshing=false;
