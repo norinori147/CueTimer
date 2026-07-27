@@ -1,20 +1,30 @@
-const VERSION = '3.1.4';
-const BUILD = '2026.07.27.01';
-const CACHE_NAME = 'cue-timer-v3-1-4';
+const VERSION = '3.1.5b';
+const BUILD = '2026.07.27.02';
+const CACHE_NAME = 'cue-timer-v3-1-5b';
 const CORE_ASSETS = [
-  './',
   './index.html',
-  './cue_timer_v3_1_4_trial.html',
   './manifest.webmanifest',
   './seimei_program_timer_icon_play_180.png',
   './seimei_program_timer_icon_play_192.png',
   './seimei_program_timer_icon_play_512.png',
 ];
+const OPTIONAL_ASSETS = [
+  './',
+  './cue_timer_v3_1_5b_pwa_stability.html',
+];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(CORE_ASSETS.map(url => new Request(url, {cache:'reload'}))))
+      .then(async cache => {
+        await cache.addAll(CORE_ASSETS.map(url => new Request(url, {cache:'reload'})));
+        await Promise.allSettled(OPTIONAL_ASSETS.map(async url => {
+          const request = new Request(url, {cache:'reload'});
+          const response = await fetch(request);
+          if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+          await cache.put(request, response);
+        }));
+      })
       .then(() => self.skipWaiting())
   );
 });
@@ -44,10 +54,17 @@ async function networkFirst(request){
   try {
     const response = await fetch(request, {cache:'no-store'});
     if (response?.ok) cache.put(request, response.clone());
-    return response;
+    return markResponseSource(response, 'network');
   } catch (error) {
-    return (await caches.match(request)) || (await caches.match('./index.html'));
+    const fallback=(await caches.match(request)) || (await caches.match('./index.html'));
+    return fallback ? markResponseSource(fallback, 'cache') : Response.error();
   }
+}
+
+function markResponseSource(response, source){
+  const headers=new Headers(response.headers);
+  headers.set('X-CueTimer-Source',source);
+  return new Response(response.body,{status:response.status,statusText:response.statusText,headers});
 }
 
 async function cacheFirst(request){
@@ -66,7 +83,7 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   const url = new URL(request.url);
   if (url.origin !== location.origin) return;
-  if (request.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/cue_timer_v3_1_4_trial.html')) {
+  if (request.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/cue_timer_v3_1_5b_pwa_stability.html')) {
     event.respondWith(networkFirst(request));
     return;
   }
