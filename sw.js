@@ -1,16 +1,16 @@
-const VERSION = '3.1.5b';
-const BUILD = '2026.07.27.02';
-const CACHE_NAME = 'cue-timer-v3-1-5b';
+const VERSION = '3.1.5c';
+const BUILD = '2026.07.27.03';
+const CACHE_NAME = 'cue-timer-v3-1-5c';
 const CORE_ASSETS = [
+  './',
   './index.html',
   './manifest.webmanifest',
-  './seimei_program_timer_icon_play_180.png',
-  './seimei_program_timer_icon_play_192.png',
-  './seimei_program_timer_icon_play_512.png',
+  './icon-180.png',
+  './icon-192.png',
+  './icon-512.png',
 ];
 const OPTIONAL_ASSETS = [
-  './',
-  './cue_timer_v3_1_5b_pwa_stability.html',
+  './cue_timer_v3_1_5c_stable.html',
 ];
 
 self.addEventListener('install', event => {
@@ -83,7 +83,7 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   const url = new URL(request.url);
   if (url.origin !== location.origin) return;
-  if (request.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/cue_timer_v3_1_5b_pwa_stability.html')) {
+  if (request.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/cue_timer_v3_1_5c_stable.html')) {
     event.respondWith(networkFirst(request));
     return;
   }
