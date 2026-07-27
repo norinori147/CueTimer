@@ -1,10 +1,10 @@
-const VERSION = '3.1.3';
-const BUILD = '2026.07.25.09';
-const CACHE_NAME = 'cue-timer-v3-1-3';
+const VERSION = '3.1.4';
+const BUILD = '2026.07.27.01';
+const CACHE_NAME = 'cue-timer-v3-1-4';
 const CORE_ASSETS = [
   './',
   './index.html',
-  './cue_timer_v3_1_3.html',
+  './cue_timer_v3_1_4_trial.html',
   './manifest.webmanifest',
   './seimei_program_timer_icon_play_180.png',
   './seimei_program_timer_icon_play_192.png',
@@ -66,7 +66,7 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   const url = new URL(request.url);
   if (url.origin !== location.origin) return;
-  if (request.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/cue_timer_v3_1_3.html')) {
+  if (request.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/cue_timer_v3_1_4_trial.html')) {
     event.respondWith(networkFirst(request));
     return;
   }
