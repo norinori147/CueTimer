@@ -614,6 +614,11 @@ function getOscDuration(kind='step',long=false){
 function createDualWhistleAt(start,duration,cfg,vol){
   const master=audioCtx.createGain();
   const compressor=audioCtx.createDynamicsCompressor();
+  compressor.threshold.setValueAtTime(-16,start);
+  compressor.knee.setValueAtTime(6,start);
+  compressor.ratio.setValueAtTime(4,start);
+  compressor.attack.setValueAtTime(0.003,start);
+  compressor.release.setValueAtTime(0.12,start);
   const osc1=audioCtx.createOscillator();
   const osc2=audioCtx.createOscillator();
   const gain1=audioCtx.createGain();
