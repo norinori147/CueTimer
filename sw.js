@@ -1,6 +1,6 @@
-const VERSION = '3.1.5d';
-const BUILD = '2026.07.29.01';
-const CACHE_NAME = 'cue-timer-v3-1-5d';
+const VERSION = '3.1.5e';
+const BUILD = '2026.07.29.02';
+const CACHE_NAME = 'cue-timer-v3-1-5e';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -10,7 +10,7 @@ const CORE_ASSETS = [
   './icon-512.png',
 ];
 const OPTIONAL_ASSETS = [
-  './cue_timer_v3_1_5d_program_only_presets.html',
+  './cue_timer_v3_1_5e_pro_whistle.html',
 ];
 
 self.addEventListener('install', event => {
@@ -83,7 +83,7 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   const url = new URL(request.url);
   if (url.origin !== location.origin) return;
-  if (request.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/cue_timer_v3_1_5d_program_only_presets.html')) {
+  if (request.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/cue_timer_v3_1_5e_pro_whistle.html')) {
     event.respondWith(networkFirst(request));
     return;
   }
