@@ -29,7 +29,7 @@ html,body{height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--
 body{background:radial-gradient(circle at top,#12243d 0,#050b14 56%,#02050a 100%)}
 .app{height:100dvh;display:grid;grid-template-rows:1fr 10dvh;gap:0}
 .display{position:relative;min-height:0;padding:10px 12px 6px}
-.board{height:100%;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(13,23,38,.96),rgba(4,9,17,.96));box-shadow:0 18px 40px rgba(0,0,0,.32);display:grid;grid-template-rows:auto 1fr auto auto;overflow:hidden}
+.board{height:100%;border:1px solid var(--line);border-radius:22px;background:#000000;box-shadow:0 18px 40px rgba(0,0,0,.32);display:grid;grid-template-rows:auto 1fr auto auto;overflow:hidden}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;border-bottom:1px solid rgba(36,57,85,.75);min-height:44px}
 .brand{font-weight:900;letter-spacing:.05em;color:#dbeafe;font-size:clamp(14px,1.8vw,22px);display:flex;align-items:center;gap:10px}
 .versionBadge{font-size:clamp(11px,1.1vw,14px);font-weight:900;color:#bae6fd;border:1px solid rgba(56,189,248,.35);background:rgba(7,89,133,.25);border-radius:999px;padding:2px 8px;letter-spacing:.02em}
@@ -366,7 +366,7 @@ function createCompatWavUrl(profile='A',duration=1.8){
     }
     if(cfg.pattern==='dual'){
       env=Math.min(1,t/0.004)*Math.min(1,remain/0.020);
-      const driftRate1=2.3,driftRate2=1.7,drift1=7,drift2=6;
+      const driftRate1=2.34,driftRate2=1.68,drift1=7.1,drift2=5.9;
       const phase1=2*Math.PI*f1*t+(drift1/driftRate1)*(1-Math.cos(2*Math.PI*driftRate1*t));
       const phase2=2*Math.PI*f2*t+(drift2/driftRate2)*(1-Math.cos(2*Math.PI*driftRate2*t));
       const breathTime=0.045,breathEnv=t<breathTime?(1-t/breathTime):0;
@@ -649,10 +649,10 @@ function createDualWhistleAt(start,duration,cfg,vol){
   harmonicGain1.gain.setValueAtTime(0.03,start);
   harmonicGain2.gain.setValueAtTime(0.03,start);
   lfo1.type='sine';lfo2.type='sine';
-  lfo1.frequency.setValueAtTime(2.3,start);
-  lfo2.frequency.setValueAtTime(1.7,start);
-  driftGain1.gain.setValueAtTime(7,start);
-  driftGain2.gain.setValueAtTime(6,start);
+  lfo1.frequency.setValueAtTime(2.34,start);
+  lfo2.frequency.setValueAtTime(1.68,start);
+  driftGain1.gain.setValueAtTime(7.1,start);
+  driftGain2.gain.setValueAtTime(5.9,start);
   lfo1.connect(driftGain1);lfo2.connect(driftGain2);
   driftGain1.connect(osc1.frequency);driftGain2.connect(osc2.frequency);
   const breathDuration=Math.min(0.045,duration);
